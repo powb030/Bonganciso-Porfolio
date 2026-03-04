@@ -1,71 +1,92 @@
 <template>
-<section id="contact" class="bg-dark py-5">
-	    <div class="container-fluid">
-	        <div class="text-center">
-	            <h3 id="text-contact" class="mb-3 text-white">Contacts</h3>
-	        </div>
+  <section id="contact" class="bg-dark py-5">
+    <div class="container-fluid">
+      <div class="text-center">
+        <h3 id="text-contact" class="mb-3 text-white">Contacts</h3>
+      </div>
 
-	        <div class="row g-4" id="map">
+      <div class="row g-4" id="map">
 
-	            <!-- Map Column -->
-	            <div class="col-12 col-md-6 d-flex flex-column align-items-center">
-	                
-	                <h2 class="mb-3 text-white text-center">Location</h2>
+        <!-- Map Column -->
+        <div class="col-12 col-md-6 d-flex flex-column align-items-center">
+          <h2 class="mb-3 text-white text-center">Location</h2>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247029.68727852078!2d120.26807557949314!3d14.665084304246395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339614e301987889%3A0x6ae0cb8f5ee13d48!2sBataan!5e0!3m2!1sen!2sph!4v1764325348024!5m2!1sen!2sph"
+            width="75%" height="400" style="border:0;"
+            allowfullscreen loading="lazy">
+          </iframe>
+        </div>
 
-	                <iframe 
-	                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247029.68727852078!2d120.26807557949314!3d14.665084304246395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339614e301987889%3A0x6ae0cb8f5ee13d48!2sBataan!5e0!3m2!1sen!2sph!4v1764325348024!5m2!1sen!2sph"
-	                    width="75%" height="400" style="border:0;"
-	                    allowfullscreen loading="lazy">
-	                </iframe>
+        <!-- Contact Form -->
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <div class="contact-form-wrapper w-100 px-md-5 px-3 border border-2 border-dark rounded bg-secondary">
+            <form class="mt-4" @submit.prevent="submitForm">
+              
+              <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input 
+                  type="text" 
+                  class="form-control custom-input" 
+                  id="name" 
+                  placeholder="Name"
+                  v-model="name"  
+                >
+              </div>
 
-	            </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address:</label>
+                <input 
+                  type="email" 
+                  class="form-control custom-input" 
+                  id="email" 
+                  placeholder="Email"
+                  v-model="email" 
+                >
+              </div>
 
-	            <!-- Contact Form -->
-	            <div class="col-12 col-md-6 d-flex justify-content-center">
-	                <div class="contact-form-wrapper w-100 px-md-5 px-3 border border-2 border-dark rounded bg-secondary">
-	                    <form class="mt-4">
-	                        <div class="mb-3">
-	                            <label for="name" class="form-label">Name:</label>
-	                            <input type="text" class="form-control custom-input" id="name" placeholder="Name">
-	                        </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message:</label>
+                <textarea 
+                  class="form-control custom-input" 
+                  id="message" 
+                  rows="5"
+                  v-model="message" 
+                ></textarea>
+              </div>
 
-	                        <div class="mb-3">
-	                            <label for="email" class="form-label">Email Address:</label>
-	                            <input type="email" class="form-control custom-input" id="email" placeholder="Email">
-	                        </div>
+              
+              <div class="d-flex justify-content-center mb-3">
+                <div ref="recaptchaContainer"></div>
+              </div>
 
-	                        <div class="mb-3">
-	                            <label for="message" class="form-label">Message:</label>
-	                            <textarea class="form-control custom-input" id="message" rows="5"></textarea>
-	                        </div>
+              <div class="d-flex justify-content-center pb-3">
+                <button 
+                  type="submit" 
+                  class="btn custom-btn border-dark form-label"
+                  :disabled="isLoading"
+                >
+                  {{ isLoading ? 'Sending...' : 'Submit' }}
+                </button>
+              </div>
 
-	                        <div class="d-flex justify-content-center pb-3">
-	                            <button type="submit" class="btn custom-btn border-dark form-label">Submit</button>
-	                        </div>
-							
-							<div class="d-flex justify-content-end mt-2">
-                        <div ref="recaptchaContainer"></div>
-                    </div>
-	                    </form>
-	                </div>
-	            </div>
+            </form>
+          </div>
+        </div>
 
+        <!-- Social Links -->
+        <div class="d-flex text-center justify-content-center">
+          <div class="col-12 col-md-6">
+            <div class="col-12 mx-auto mt-3">
+              <a href="https://www.facebook.com/login/" target="_blank"><img src="/images/fb.png" alt="Facebook" class="logo" width="50"></a>
+              <a href="https://www.linkedin.com/login" target="_blank"><img src="/images/linkedin.png" alt="Linkedin" class="logo" width="38"></a>
+              <a href="https://github.com/login" target="_blank"><img src="/images/gitwhite.png" alt="GitHub" class="logo" width="40"></a>
+            </div>
+          </div>
+        </div>
 
-	            <div class="d-flex text-center justify-content-center">
-	            	<div class="col-12 col-md-6" >
-	            		
-	            		 <div class="col-12 mx-auto mt-3">
-	            		    <a href="https://www.facebook.com/login/" target="_blank"><img src="/images/fb.png" alt="Facebook" class="logo" width="50"></a>
-	            		    <a href="https://www.linkedin.com/login" target="_blank"><img src="/images/linkedin.png" alt="Linkedin" class="logo" width="38"></a>
-	            		    <a href="https://github.com/login" target="_blank"><img src="/images/gitwhite.png" alt="GitHub" class="logo" width="40"></a>
-	            		 </div>
-
-	            	</div>
-	            </div>
-	        </div>
-	    </div>
-	</section>
-
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -201,4 +222,5 @@
 
 
 </script>
+
 
