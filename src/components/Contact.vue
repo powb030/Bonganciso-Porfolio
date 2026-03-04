@@ -109,52 +109,48 @@
 
 	const isLoading = ref(false);
 
-	const submitForm = async()=> {
+	const submitForm = async () => {
+  if (!recaptchaToken.value) {
+    notyf.error("Please verify that you are not a robot");
+    return; // ✅ was missing return — it continued even without token!
+  }
 
-		// Check if reCAPTCHA token is present, return an error when not verified
-		if(!recaptchaToken.value){
-			notyf.error("Please verify that you are not a robot")
-		}
+  isLoading.value = true;
 
-		isLoading.value = true;
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: subject,
+        name: name.value,
+        email: email.value,
+        message: message.value
+      })
+    });
 
+    const result = await response.json();
 
-		try{
-			const response = await fetch("https://api.web3forms.com/submit", {
-				method: "POST",
-				headers: {
-					"Content-Type" : "application/json",
-					Accept: "application/json"
-				},
-				body: JSON.stringify({
-					access_key: WEB3FORMS_ACCESS_KEY,
-					subject: subject,
-					name: name.value,
-					email: email.value,
-					message: message.value
-				})
-			})
-
-			const result = await response.json();
-
-			if(result.success){
-				console.log(result);
-				isLoading.value = false;
-				notyf.success("Message Sent!");
-			}
-			else{
-				isLoading.value = false;
-				notyf.error("Failed to send message");
-			}
-		}
-		catch(error){
-			console.log(error);
-			isLoading.value = false;
-			notyf.error("Failed to send message");
-		}
-		
-
-	}
+    if (result.success) {
+      notyf.success("Message Sent!");
+      name.value = "";      
+      email.value = "";
+      message.value = "";
+      resetRecaptcha();      
+    } else {
+      notyf.error("Failed to send message");
+    }
+  } catch (error) {
+    console.log(error);
+    notyf.error("Failed to send message");
+  } finally {
+    isLoading.value = false;
+  }
+};
 	
 
 
@@ -222,5 +218,6 @@
 
 
 </script>
+
 
 
