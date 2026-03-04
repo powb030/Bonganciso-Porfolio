@@ -42,6 +42,10 @@
 	                        <div class="d-flex justify-content-center pb-3">
 	                            <button type="submit" class="btn custom-btn border-dark form-label">Submit</button>
 	                        </div>
+							
+							<div class="d-flex justify-content-end mt-2">
+                        <div ref="recaptchaContainer"></div>
+                    </div>
 	                    </form>
 	                </div>
 	            </div>
@@ -197,3 +201,4 @@
 
 
 </script>
+
