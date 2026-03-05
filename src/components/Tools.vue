@@ -44,6 +44,38 @@
 	    		</div>
 	      </div>
 
+	      <!-- MERN -->
+	      <div class="row mb-4 text-center mt-2 p-2 mb-md-5">
+	        <div class="col-12">
+	          <h2 class="text-tools">MERN</h2>
+	        </div>
+	      </div>
+
+	      <div class="row text-center justify-content-center">
+
+	      <!-- MongoDB -->
+	      <div class="col-auto mb-4 d-flex justify-content-center align-items-center">
+	          <img src="/images/mongodb.svg" class="img-fluid img-pic" width="100">
+	      </div>
+
+	      <!-- Express JS -->
+	      <div class="col-auto mb-4 d-flex justify-content-center align-items-center">
+	          <img src="/images/expressjs.svg" class="img-fluid img-pic" width="100">
+	      </div>
+
+	      <!-- React JS -->
+	      <div class="col-auto mb-4 d-flex justify-content-center align-items-center">
+	          <img src="/images/react.svg" class="img-fluid img-pic" width="100">
+	      </div>
+
+	      <!-- Node JS -->
+	      <div class="col-auto mb-4 d-flex justify-content-center align-items-center">
+	          <img src="/images/nodejs.svg" class="img-fluid img-pic" width="100">
+	      </div>
+	  </div>
+
+
+
 		<div class="container-fluid">
 
 	    <!-- Tools Title -->
