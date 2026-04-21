@@ -29,7 +29,7 @@
     "id": 5,
     "title": "Blog Application",
     "description": "Blog Application is a full-stack web platform that enables users to browse and manage blog posts through a responsive and user-friendly interface. It integrates a RESTful API to handle CRUD operations, demonstrating skills in front-end development, API integration, and data management.",
-    "image": "/images/Airline Booking System Mockup.jpg",
+    "image": "/images/BlogApplication.png",
     "link": "https://blog-application-lovat-eight.vercel.app"
   },
   {
