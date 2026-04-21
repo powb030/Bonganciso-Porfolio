@@ -22,8 +22,9 @@
   {
     "id": 4,
     "title": "Blog Application API Documentation",
-    "description": "MERN E-Commerce Platform. The platform features dynamic product catalog with filtering and sorting, real-time search, seamless cart updates, secure checkout, and a comprehensive admin dashboard with real-time analytics and user management capabilities.",
-    "image": "/images/E-commerce App.png"
+    "description": "BlogApplicationApi",
+    "image": "/images/E-commerce App.png",
+    "link": "https://github.com/powb030/s87-s89-Blog-Application"
   },
   {
     "id": 5,
