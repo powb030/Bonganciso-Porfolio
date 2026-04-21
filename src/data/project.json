@@ -8,7 +8,7 @@
   },
   {
     "id": 2,
-    "title": "E-commerce Applcation",
+    "title": "E-commerce Application",
     "description": "MERN E-Commerce Platform. The platform features dynamic product catalog with filtering and sorting, real-time search, seamless cart updates, secure checkout, and a comprehensive admin dashboard with real-time analytics and user management capabilities.",
     "image": "/images/TechTitan.png",
     "link": "https://tech-titan-ecommerce.vercel.app/products"
