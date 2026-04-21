@@ -33,29 +33,4 @@
     "description": "Blog Application is a full-stack web platform that enables users to browse and manage blog posts through a responsive and user-friendly interface. It integrates a RESTful API to handle CRUD operations, demonstrating skills in front-end development, API integration, and data management.",
     "image": "/images/BlogApplication.png",
     "link": "https://blog-application-lovat-eight.vercel.app"
-  },
-  {
-    "id": 6,
-    "title": "Airline Booking System Prototype",
-    "description": "Side Project: Interactive prototype simulating end-to-end airline booking functionalities, including flight search, reservation, payment processing, and real-time ticket management.",
-    "image": "/images/Airline Booking System Prototype.jpg"
-  },
-  {
-    "id": 7,
-    "title": "Short Courses Capstone",
-    "description": "Placeholder for your Short courses capstone project.",
-    "image": "/images/capstone-1.png"
-  },
-  {
-    "id": 8,
-    "title": "Short Courses Capstone",
-    "description": "Placeholder for your Short courses capstone project.",
-    "image": "/images/capstone-1.png"
-  },
-  {
-    "id": 9,
-    "title": "Short Courses Capstone",
-    "description": "Placeholder for your Short courses capstone project.",
-    "image": "/images/capstone-1.png"
   }
-]
